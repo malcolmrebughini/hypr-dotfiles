@@ -1,0 +1,67 @@
+shell:
+  program: /usr/bin/nu
+
+window:
+  opacity: 0.5
+
+font:
+  size: 16
+  normal:
+    family: JetBrains Mono Nerd Font
+    style: Regular
+
+# BEGIN ACE
+colors:
+  primary:
+    background: '#09060a'
+    foreground: '#a0d2c6'
+  cursor:
+    text:       '#09060a'
+    cursor:     '#a0d2c6'
+  normal:
+    black:      '#09060a'
+    red:        '#4c892d'
+    green:      '#bf613f'
+    yellow:     '#32987d'
+    blue:       '#2b7781'
+    magenta:    '#2e8c8c'
+    cyan:       '#359f9b'
+    white:      '#a0d2c6'
+  bright:
+    black:      '#70938a'
+    red:        '#4c892d'
+    green:      '#bf613f'
+    yellow:     '#32987d'
+    blue:       '#2b7781'
+    magenta:    '#2e8c8c'
+    cyan:       '#359f9b'
+    white:      '#a0d2c6'
+# END ACE
+
+# # BEGIN ACE
+# colors:
+#   primary:
+#     background: '#1A1B26'
+#     foreground: '#A9B1D6'
+#   cursor:
+#     text:       '#73DACA'
+#     cursor:     '#1A1B26'
+#   normal:
+#     black:      '#A9B1D6'
+#     red:        '#565F89'
+#     green:      '#73DACA'
+#     yellow:     '#E0AF68'
+#     blue:       '#7AA2F7'
+#     magenta:    '#BB9AF7'
+#     cyan:       '#7DCFFF'
+#     white:      '#A9B1D6'
+#   bright:
+#     black:      '#70938a'
+#     red:        '#4c892d'
+#     green:      '#bf613f'
+#     yellow:     '#32987d'
+#     blue:       '#2b7781'
+#     magenta:    '#2e8c8c'
+#     cyan:       '#359f9b'
+#     white:      '#a0d2c6'
+# # END ACE

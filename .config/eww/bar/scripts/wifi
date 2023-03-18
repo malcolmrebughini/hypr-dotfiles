@@ -1,0 +1,18 @@
+#!/bin/sh
+
+symbol() {
+if [ $(cat /sys/class/net/w*/operstate) = up ]
+then
+echo 
+elif [ $(cat /sys/class/net/w*/operstate) = down ]
+then
+echo 睊
+fi
+}
+
+name() {
+nmcli | grep "^wlp" | sed 's/\ connected\ to\ /Connected to /g' | cut -d ':' -f2
+}
+
+[ "$1" = "icon" ] && symbol && exit
+[ "$1" = "name" ] && name && exit
