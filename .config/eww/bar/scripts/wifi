@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 symbol() {
 if [ $(cat /sys/class/net/w*/operstate) = up ]
 then
@@ -11,7 +12,11 @@ fi
 }
 
 name() {
-nmcli | grep "^wlp" | sed 's/\ connected\ to\ /Connected to /g' | cut -d ':' -f2
+if [ $(cat /sys/class/net/w*/operstate) = up ]; then
+wpa_cli status  | grep '^ssid' | sed 's/ssid=/Connected\ to\ /g'
+else
+echo "Not connected"
+fi
 }
 
 [ "$1" = "icon" ] && symbol && exit
