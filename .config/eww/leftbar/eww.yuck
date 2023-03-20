@@ -1,0 +1,30 @@
+(defvar eww "eww -c $HOME/.config/eww/leftbar")
+(defvar orientation "v")
+
+
+(include "../widgets/bar/bar.yuck")
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;							Window Section's							 ;;	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Bar Windows ;;
+(defwindow bar
+	:geometry (geometry :x "0" 
+						:y "0" 
+						:height "100%"
+						:width "47px")
+	:monitor 0
+	:hexpand "false"
+	:vexpand "false"
+(bar))
+
+
+;; Calendar Windows ;;
+(defwindow calendar
+	:monitor 0
+	:geometry (geometry :x "47px" 
+						:y "80%" 
+						:width "270px" 
+						:height "60px")
+(cal))

@@ -1,68 +1,57 @@
-;; put path to aesthetic bar config files here ;;
-(defvar eww "eww -c $HOME/.config/eww/bar")
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;							Widget Section's							 ;;	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Launcher Widgets ;;
-(defwidget launcher []
-	(box :orientation "v" 
-		 :space-evenly "false" 
-		 :spacing -15
-  	(button :class "launcher_icon" 
-		   	:onclick "scripts/popup launcher"  "")))
-
 ;; Workspaces Widgets ;;
 (defwidget workspaces []
 	(literal :content workspace))
-(deflisten workspace "scripts/workspace")
+(deflisten workspace "../widgets/bar/scripts/workspace")
 
 ;; Battery Widgets ;;
 (defwidget bat []
 	(literal :content bat))
-(deflisten bat "scripts/battery")
+(deflisten bat "../widgets/bar/scripts/battery")
 
 ;; Wifi Widgets ;;
 (defwidget wifi []
-	(box		:orientation "v"  
+	(box		:orientation orientation  
 				:tooltip wifi-name
-	(button		:onclick "scripts/popup wifi" 
+	(button		:onclick "../widgets/bar/scripts/popup wifi" 
 				:class "wifi-icon" wifi-icon)))
-(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
-(defpoll wifi-name :interval "1s" "scripts/wifi name")
+(defpoll wifi-icon :interval "1s" "../widgets/bar/scripts/wifi icon")
+(defpoll wifi-name :interval "1s" "../widgets/bar/scripts/wifi name")
 
 ;; Volume Widgets ;;
 (defwidget volum []
 	(eventbox :onhover "${eww} update volum=true" 		
 			  :onhoverlost "${eww} update volum=false"
 			  :cursor "pointer"
-	(box      :orientation "v" 	  
+	(box      :orientation orientation 	  
 			  :space-evenly "false" 
 			  :spacing "0"
-	(revealer :transition "slideup" 
+	(revealer :transition  {orientation == "v" ? "slideup" : "slideleft"}
 			  :reveal volum         
-			  :duration "550ms"
+			  :duration "300ms"
 	(scale    :class "volbar" 	  
 			  :value volume_value
-			  :orientation "v"      
+			  :orientation orientation      
 			  :flipped true 
 			  :tooltip "Volume: ${volumen}%" 
 			  :max 101 
 			  :min 0 
-			  :onchange "scripts/volume set {}" ))
-	(button   :onclick "scripts/volume --toggle-muted" 
-			  :onrightclick "scripts/popup audio"   
+			  :onchange "../widgets/bar/scripts/volume set {}" ))
+	(button   :onclick "../widgets/bar/scripts/volume --toggle-muted" 
+			  :onrightclick "../widgets/bar/scripts/popup audio"   
 			  :class "volume-icon" "${volume_icon}"
 	))))
-(defpoll volume_icon :interval "0.5s" "~/.config/eww/bar/scripts/volume --icon")
-(defpoll volumen :interval "0.5s" "~/.config/eww/bar/scripts/volume --percentage")
-(defpoll volume_value :interval "0.5s" "~/.config/eww/bar/scripts/volume --vol")
+(defpoll volume_icon :interval "0.5s" "../widgets/bar/scripts/volume --icon")
+(defpoll volumen :interval "0.5s" "../widgets/bar/scripts/volume --percentage")
+(defpoll volume_value :interval "0.5s" "../widgets/bar/scripts/volume --vol")
 (defvar volum false)
 
 ;; Control Panel Widgets ;;	
 (defwidget control []
-	(box :orientation "v" 
+	(box :orientation orientation 
 		 :space-evenly false  
 		 :class "control"
 (bat)
@@ -72,12 +61,12 @@
 ;; Clock Widgets ;;
 (defwidget time []
 	(eventbox :cursor "pointer"
-	(box	:orientation "v" 
+	(box	:orientation orientation 
 			:class "time" 
-			:valign "end"
-	(button	:onclick "scripts/popup calendar"	
-			:class "time-hour" hour)
-	(button	:onclick "scripts/popup calendar"	
+			:valign {orientation == "v" ? "end" : "center"}
+	(button	:onclick "../widgets/bar/scripts/popup calendar"	
+			:class "time-hour" {orientation == "v" ? hour : "${hour}:"})
+	(button	:onclick "../widgets/bar/scripts/popup calendar"	
 			:class "time-min"  min))))
 (defpoll hour	:interval "1s"	"date '+%H'")
 (defpoll min	:interval "1s"	"date '+%M'")
@@ -85,7 +74,7 @@
 ;; Calendar Widgets ;;
 (defwidget cal []
 	(box :class "cal-box" 
-		 :orientation "v"
+		 :orientation orientation
 	(box :class "cal-inner-box"
 	(calendar :class "cal" 
 			  :day calendar_day 
@@ -103,14 +92,14 @@
 	(eventbox	:onhover "${eww} update power=true"	
 				:onhoverlost "${eww} update power=false" 
 				:cursor "pointer"
-	(box		:orientation  "v"					
+	(box		:orientation  orientation					
 				:space-evenly "false" 	 
 				:vexpand "false" 	
 				:class "powermenu"
-	(revealer	:transition "slideup"				
+	(revealer	:transition {orientation == "v" ? "slideup" : "slideleft"}				
 				:reveal power			 
 				:duration "550ms"
-	(box		:orientation "v"					
+	(box		:orientation orientation					
 				:space-evenly "false"
 
   	(button		:class "button-reb"					
@@ -124,28 +113,33 @@
 	(button		:class "button-off"					
 				:tooltip "Shutdown"		 
 				:onclick "shutdown now"	""))))
-;;"⏻"
 (defvar power false)
 
 ;; Top Widgets ;;
 (defwidget top []
-	(box	:orientation "v" 
+	(box	:orientation orientation 
 			:space-evenly "false" 
-			:valign "start" 
+			:valign {orientation == "v" ? "start" : ""}
+			:halign {orientation == "v" ? "" : "start"}
+			:hexpand {orientation == "v" ? "true" : "false"}
+			:vexpand {orientation == "v" ? "false" : "true"}
 (workspaces)))
 
 ;; Bottom Widgets ;;
 (defwidget bottom []
-	(box	:orientation "v" 
+	(box	:orientation orientation 
 			:space-evenly false 
 (time)
 (power)))
 
 ;; End Widgets ;;
 (defwidget end []
-	(box :orientation "v" 
+	(box :orientation orientation 
 		 :space-evenly "false" 
-		 :valign "end" 
+		 :valign {orientation == "v" ? "end" : ""} 
+		 :halign {orientation == "v" ? "" : "end"} 
+		 :hexpand {orientation == "v" ? "true" : "false"}
+		 :vexpand {orientation == "v" ? "false" : "true"}
 		 :spacing 5
 (control)
 (bottom)))
@@ -153,39 +147,8 @@
 ;; Bar Widgets ;;
 (defwidget bar []
 	(box :class "eww_bar" 
-		 :orientation "v" 
+		 :orientation orientation 
 		 :vexpand "false" 
 		 :hexpand "false"
 (top)
 (end)))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;							Window Section's							 ;;	
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Bar Windows ;;
-(defwindow bar
-	:geometry (geometry :x "0" 
-						:y "0" 
-						:height "100%" 
-						:width "47px")
-	:monitor 0
-	:reserve (struts :distance "35px" 
-					 :side "left")
-	:wm-ignore false
-	:hexpand "false"
-	:vexpand "false"
-(bar))
-
-;; Calendar Windows ;;
-(defwindow calendar
-	:monitor 0
-	:geometry (geometry :x "47px" 
-						:y "80%" 
-						:width "270px" 
-						:height "60px")
-(cal))
-
-
-
-
-

@@ -3,6 +3,8 @@
   all: unset;
 }
 
+
+
 // Variable Color's
 $background: #1a1b26;
 $foreground: #a9b1d6;
@@ -22,12 +24,21 @@ $white: $foreground;
 .eww_bar {
   background-color: rgba(26, 27, 38, 0.3);
 
-  padding: 0.3rem;
+  @if $orientation == "v" {
+    padding: 0.3rem;
+  } @else {
+    padding: 0.3rem 1rem;
+  }
 }
 
 // Workspaces
 .works {
-  padding: 0.2rem 0.7rem 0.2rem 0.7rem;
+  @if $orientation == "v" {
+    padding: 0.7rem 0.2rem;
+  } @else {
+    padding: 0.2rem 0.7rem;
+  }
+
   background-color: $black;
   border-radius: 5px;
 }
@@ -90,8 +101,28 @@ $white: $foreground;
 .00,
 .000,
 .0 {
-  font-size: 1.8rem;
+  transition: color 1s;
   padding: 0;
+
+  @if $orientation == "v" {
+    font-size: 1.8rem;
+    padding: 0.3rem;
+  } @else {
+    font-size: 1.5rem;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.ws-icon {
+  transition: 0.4s all ease;
+}
+
+.ws-btn:hover {
+  .ws-icon {
+      color: $cyan;
+      transition: 0.3s all ease;
+  }
 }
 
 // Control Panel
@@ -107,25 +138,45 @@ $white: $foreground;
   color: $blue;
 }
 
-.wifi-icon {
-  font-size: 1.9em;
+.wifi-icon { 
   color: $magenta;
-  margin-bottom: -10px;
+
+  @if $orientation == "v" {
+    margin-bottom: -10px;
+    font-size: 1.9em;
+  } @else {
+    padding: 0.2rem 0.7rem;
+    font-size: 1em;
+  }
 }
 
 .volume-icon {
   margin: 0;
   color: $green;
-  font-size: 1.6em;
+
+  @if $orientation == "v" {
+    font-size: 1.6em;
+    padding: 0.7rem 0.2rem;
+  } @else {
+    font-size: 1em;
+    padding: 0.2rem 0.7rem;
+  }
 }
 
 scale trough {
   all: unset;
   background-color: $background;
   border-radius: 5px;
-  min-height: 80px;
-  min-width: 10px;
-  margin: 0.3rem 0 0.3rem 0;
+  
+  @if $orientation == "v" {
+    min-height: 80px;
+    min-width: 10px;
+    margin: 0.3rem 0 0.3rem 0;
+  } @else {
+    min-width: 80px;
+    min-height: 10px;
+    margin: 0 0.3rem 0 0.3rem;
+  } 
 }
 
 .bribar trough highlight {
@@ -146,8 +197,14 @@ scale trough {
   background-color: $black;
   color: $white;
   border-radius: 5px;
-  padding: 0.7rem 0 0.5rem 0;
-  margin: 0.5rem 0 0.5rem 0;
+  
+  @if $orientation == "v" {
+    padding: 0.7rem 0 0.5rem 0;
+    margin: 0.5rem 0 0.5rem 0;
+  } @else {
+    padding: 0 0.7rem;
+    margin:  0 0.5rem;
+  }
 }
 
 // Calendar
@@ -203,12 +260,19 @@ calendar:indeterminate {
 .button-lock,
 .button-quit,
 .button-off {
-  padding: 0.5rem 0rem 0.5rem 0rem;
+  @if $orientation == "v" {
+    padding: 0.5rem 0rem 0.5rem 0rem;
+  } @else {
+    padding: 0 0.5rem 0 0.5rem;
+  }
 }
 
 .button-off {
-  margin-bottom: 0.5rem;
   color: $red;
+
+  @if $orientation == "v" {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .button-reb {
