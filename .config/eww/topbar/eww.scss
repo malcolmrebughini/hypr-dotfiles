@@ -1,3 +1,7 @@
 $orientation: h;
 
-@import "../widgets/bar/bar.scss"
+@import "../widgets/bar/bar.scss";
+
+.eww_bar {
+    font-size: 1.3rem;
+}

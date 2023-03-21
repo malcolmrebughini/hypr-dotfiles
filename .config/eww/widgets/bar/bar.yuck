@@ -63,6 +63,7 @@
 	(eventbox :cursor "pointer"
 	(box	:orientation orientation 
 			:class "time" 
+			:space-evenly "false" 
 			:valign {orientation == "v" ? "end" : "center"}
 	(button	:onclick "../widgets/bar/scripts/popup calendar"	
 			:class "time-hour" {orientation == "v" ? hour : "${hour}:"})
@@ -104,15 +105,15 @@
 
   	(button		:class "button-reb"					
 	  			:tooltip "Reboot"		 
-				:onclick "reboot"	"")
+				:onclick "reboot"	"")
 
 	(button		:class "button-quit" 				
 				:tooltip "Logout" 		 
-				:onclick "hyprctl dispatch exit" "")))
+				:onclick "hyprctl dispatch exit" "")))
 
 	(button		:class "button-off"					
 				:tooltip "Shutdown"		 
-				:onclick "shutdown now"	""))))
+				:onclick "shutdown now"	""))))
 (defvar power false)
 
 ;; Top Widgets ;;

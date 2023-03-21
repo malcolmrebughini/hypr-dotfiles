@@ -11,7 +11,7 @@
 (defwindow bar
 	:geometry (geometry :x "0" 
 						:y "0" 
-						:height "42px"
+						:height "35px"
 						:width "100%")
 	:monitor 0
 	:hexpand "false"
@@ -23,8 +23,8 @@
 ;; Calendar Windows ;;
 (defwindow calendar
 	:monitor 0
-	:geometry (geometry :x "47px" 
-						:y "80%" 
+	:geometry (geometry :x "88%" 
+						:y "35px" 
 						:width "270px" 
 						:height "60px")
 (cal))

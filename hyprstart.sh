@@ -38,7 +38,7 @@ then
     export LEFT_RESERVED="50"
     export BAR_EWW="leftbar"
 else
-    export TOP_RESERVED="45"
+    export TOP_RESERVED="37"
     export LEFT_RESERVED="0"
     export BAR_EWW="topbar"
 fi

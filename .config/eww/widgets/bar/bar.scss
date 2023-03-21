@@ -3,8 +3,6 @@
   all: unset;
 }
 
-
-
 // Variable Color's
 $background: #1a1b26;
 $foreground: #a9b1d6;
@@ -22,11 +20,11 @@ $white: $foreground;
 
 // EWW BAR
 .eww_bar {
-  background-color: rgba(26, 27, 38, 0.3);
-
   @if $orientation == "v" {
+    background-color: rgba(26, 27, 38, 0.3);
     padding: 0.3rem;
   } @else {
+    background-color: rgba(26, 27, 38, 1);
     padding: 0.3rem 1rem;
   }
 }
@@ -134,7 +132,7 @@ $white: $foreground;
 }
 
 .bat {
-  font-size: 1.2em;
+  // font-size: 1.2em;
   color: $blue;
 }
 
@@ -145,8 +143,8 @@ $white: $foreground;
     margin-bottom: -10px;
     font-size: 1.9em;
   } @else {
-    padding: 0.2rem 0.7rem;
-    font-size: 1em;
+    padding: 0 0.7rem;
+    font-size: 1.7rem;
   }
 }
 
@@ -158,8 +156,8 @@ $white: $foreground;
     font-size: 1.6em;
     padding: 0.7rem 0.2rem;
   } @else {
-    font-size: 1em;
-    padding: 0.2rem 0.7rem;
+    font-size: 1.7rem;
+    padding: 0 0.7rem;
   }
 }
 
@@ -202,6 +200,7 @@ scale trough {
     padding: 0.7rem 0 0.5rem 0;
     margin: 0.5rem 0 0.5rem 0;
   } @else {
+    font-size: 1.4rem;
     padding: 0 0.7rem;
     margin:  0 0.5rem;
   }
@@ -254,6 +253,11 @@ calendar:indeterminate {
 .powermenu {
   font-size: 1.3em;
   font-weight: bold;
+
+  @if $orientation == "v" {
+  } @else {
+    font-size: 1.7rem;
+  }
 }
 
 .button-reb,
