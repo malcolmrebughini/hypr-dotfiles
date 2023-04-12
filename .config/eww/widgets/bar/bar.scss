@@ -3,19 +3,59 @@
   all: unset;
 }
 
-// Variable Color's
+
+// Variable Color'
 $background: #1a1b26;
+$background: #19100F;
+$background: #5199ae;
 $foreground: #a9b1d6;
 
-$blackRgba: rgba(36, 40, 59, 0.9);
 $black: #24283B;
+$black: #281936;
+$black: #2a4350;
 $gray: #565f89;
+$gray: #3B3B3A;
+$gray: #3caea2;
 $red: #f7768e;
+$green: #73daca;
 $green: #73daca;
 $yellow: #e0af68;
 $blue: #7aa2f7;
+$blue: #1F3B57;
+$blue: #bfc2cb;
 $magenta: #bb9af7;
 $cyan: #7dcfff;
+$cyan: #2D918D;
+$white: $foreground;
+
+
+// #308A8D
+// #39ADA1
+// #262A42
+// #BFC2CB
+// #3E766D
+// #160F12
+// #2E5A64
+// #4B413A
+// #695C58
+// #79CFB2
+// #1E4866
+// #5199AE
+// #5AA574
+// #A95154
+
+
+$background: #160F12;
+$foreground: #BFC2CB;
+
+$black: #292E43;
+$gray: #BFC2CB;
+$red: #A95154;
+$green: #39ADA1;
+$yellow: #39ADA1;
+$blue: #39ADA1;
+$magenta: #39ADA1;
+$cyan: #39ADA1;
 $white: $foreground;
 
 // EWW BAR
@@ -24,7 +64,7 @@ $white: $foreground;
     background-color: rgba(26, 27, 38, 0.3);
     padding: 0.3rem;
   } @else {
-    background-color: rgba(26, 27, 38, 1);
+    background-color: $background;
     padding: 0.3rem 1rem;
   }
 }

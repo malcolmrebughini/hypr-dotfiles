@@ -1,8 +1,6 @@
 ## TODO
 
 - Accept wal generated themes
-- Add NetworkManager support
-- Add top bar mode
 - Add system tray
 
 
