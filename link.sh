@@ -4,7 +4,7 @@ echo $PWD
 echo $XDG_CONFIG_HOME
 echo $HOME
 
-CFG_TO_LINK=("alacritty" "dunst" "eww" "hypr" "nushell" "rofi" "swww" "starship.toml")
+CFG_TO_LINK=("alacritty" "dunst" "eww" "hypr" "nushell" "nvim" "rofi" "swww" "starship.toml")
 DIR_TO_LINK=(".fonts" ".wallpapers" ".icons")
 CONFIG_DIR="$HOME/.config"
 RUN_TS=$(date +"%s")
