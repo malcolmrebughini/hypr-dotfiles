@@ -13,13 +13,13 @@
 palette = "catppuccin_mocha"
 
 format = """
-[╭─](fg:text)\
-[](bg:base fg:text)\
+[╭─](fg:sapphire)\
+[](bg:crust fg:sapphire)\
 $directory\
-[](fg:base bg:text)\
+[](fg:crust bg:sapphire)\
 $git_branch\
 $git_status\
-[](fg:text bg:base)\
+[](fg:sapphire bg:crust)\
 $c\
 $elixir\
 $elm\
@@ -29,14 +29,14 @@ $java\
 $julia\
 $nodejs\
 $rust\
-[](fg:base bg:text)\
+[](fg:crust bg:sapphire)\
 $kubernetes\
 $docker_context\
-[](fg:text bg:base)\
+[](fg:sapphire bg:crust)\
 $time(fg:sapphire)\
-[ ](fg:base)\
+[ ](fg:crust)\
 $line_break\
-[╰─](fg:text) 
+[╰─](fg:sapphire) 
 """
 
 # Disable the blank line at the start of the prompt
@@ -50,7 +50,7 @@ style_root = "bg:#9A348E"
 format = '[$user ]($style)'
 
 [directory]
-style = "bg:base sapphire"
+style = "bg:crust sapphire"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -75,7 +75,7 @@ format = '[ $symbol ($version) ]($style)'
 
 [docker_context]
 symbol = " "
-style = "bg:text sapphire"
+style = "bg:sapphire sapphire"
 format = '[ $symbol $context ]($style) $path'
 
 [elixir]
@@ -90,53 +90,53 @@ format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bg:text base"
+style = "bg:sapphire base"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:text base"
+style = "bg:sapphire base"
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
 symbol = " "
-style = "bg:base sapphire"
+style = "bg:crust sapphire"
 format = '[ $symbol ($version) ]($style)'
 
 [haskell]
 symbol = " "
-style = "bg:base sapphire"
+style = "bg:crust sapphire"
 format = '[ $symbol ($version) ]($style)'
 
 [java]
 symbol = " "
-style = "bg:base sapphire"
+style = "bg:crust sapphire"
 format = '[ $symbol ($version) ]($style)'
 
 [julia]
 symbol = " "
-style = "bg:base sapphire"
+style = "bg:crust sapphire"
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:base sapphire"
+style = "bg:crust sapphire"
 format = '[ $symbol ($version) ]($style)'
 
 [kubernetes]
 disabled = true
 symbol = "⛵ "
-style = "bg:text bold base"
+style = "bg:sapphire bold base"
 format = '[ $context \($namespace\) ]($style)'
 
 [rust]
 symbol = ""
-style = "bg:base sapphire"
+style = "bg:crust sapphire"
 format = '[ $symbol ($version) ]($style)'
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:base sapphire"
+style = "bg:crust sapphire"
 format = '[ $time ]($style)'
 
 
