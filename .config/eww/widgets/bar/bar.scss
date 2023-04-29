@@ -3,65 +3,50 @@
   all: unset;
 }
 
+$rosewater: #f5e0dc;
+$flamingo: #f2cdcd;
+$pink: #f5c2e7;
+$mauve: #cba6f7;
+$red: #f38ba8;
+$maroon: #eba0ac;
+$peach: #fab387;
+$yellow: #f9e2af;
+$green: #a6e3a1;
+$teal: #94e2d5;
+$sky: #89dceb;
+$sapphire: #74c7ec;
+$blue: #89b4fa;
+$lavender: #b4befe;
+$text: #cdd6f4;
+$subtext1: #bac2de;
+$subtext0: #a6adc8;
+$overlay2: #9399b2;
+$overlay1: #7f849c;
+$overlay0: #6c7086;
+$surface2: #585b70;
+$surface1: #45475a;
+$surface0: #313244;
+$base: #1e1e2e;
+$mantle: #181825;
+$crust: #11111b;
 
-// Variable Color'
-$background: #1a1b26;
-$background: #19100F;
-$background: #5199ae;
-$foreground: #a9b1d6;
+$background: $base;
+$foreground: $text;
 
-$black: #24283B;
-$black: #281936;
-$black: #2a4350;
-$gray: #565f89;
-$gray: #3B3B3A;
-$gray: #3caea2;
-$red: #f7768e;
-$green: #73daca;
-$green: #73daca;
-$yellow: #e0af68;
-$blue: #7aa2f7;
-$blue: #1F3B57;
-$blue: #bfc2cb;
-$magenta: #bb9af7;
-$cyan: #7dcfff;
-$cyan: #2D918D;
-$white: $foreground;
-
-
-// #308A8D
-// #39ADA1
-// #262A42
-// #BFC2CB
-// #3E766D
-// #160F12
-// #2E5A64
-// #4B413A
-// #695C58
-// #79CFB2
-// #1E4866
-// #5199AE
-// #5AA574
-// #A95154
-
-
-$background: #160F12;
-$foreground: #BFC2CB;
-
-$black: #292E43;
-$gray: #BFC2CB;
-$red: #A95154;
-$green: #39ADA1;
-$yellow: #39ADA1;
-$blue: #39ADA1;
-$magenta: #39ADA1;
-$cyan: #39ADA1;
+$black: $crust;
+$gray: $overlay2;
+$red: $red;
+$green: $green;
+$yellow: $yellow;
+$blue: $blue;
+$magenta: $sky;
+$cyan: $sapphire;
 $white: $foreground;
 
 // EWW BAR
 .eww_bar {
   @if $orientation == "v" {
-    background-color: rgba(26, 27, 38, 0.3);
+    background-color: $background;
     padding: 0.3rem;
   } @else {
     background-color: $background;
@@ -83,7 +68,7 @@ $white: $foreground;
 
 /* Unoccupied */
 .0 {
-  color: $gray;
+  color: $white;
 }
 
 /* Occupied */
@@ -97,7 +82,7 @@ $white: $foreground;
 .08,
 .09,
 .010 {
-  color: $gray;
+  color: $white;
 }
 
 /* Focused */
@@ -190,7 +175,7 @@ $white: $foreground;
 
 .volume-icon {
   margin: 0;
-  color: $green;
+  color: $blue;
 
   @if $orientation == "v" {
     font-size: 1.6em;
@@ -223,7 +208,7 @@ scale trough {
 }
 
 .volbar trough highlight {
-  background-color: $green;
+  background-color: $blue;
   border-radius: 5px;
 }
 
@@ -324,7 +309,7 @@ calendar:indeterminate {
 }
 
 .button-quit {
-  color: $magenta;
+  color: $peach;
 }
 
 .button-lock {
