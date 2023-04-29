@@ -7,6 +7,10 @@
 	(literal :content workspace))
 (deflisten workspace "../widgets/bar/scripts/workspace")
 
+;; Mem/CPU Widgets ;;
+(defwidget mem []
+	(label :class "pancho" :text "${EWW_RAM.free_mem}%"))
+
 ;; Battery Widgets ;;
 (defwidget bat []
 	(literal :content bat))
@@ -54,6 +58,7 @@
 	(box :orientation orientation 
 		 :space-evenly false  
 		 :class "control"
+;;(mem)
 (bat)
 (wifi)
 (volum)))
