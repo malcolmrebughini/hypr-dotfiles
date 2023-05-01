@@ -11,7 +11,7 @@ makepkg -si
 cd $curr
 
 # Base
-sudo pacman -S netctl gnome-keyring alacritty nushell starship zoxide rustup grim polkit-kde-agent dunst pamixer libpulse xdg-desktop-portal wireplumber socat nvidia-dkms swayidle slurp papirus-icon-theme socat nvidia-dkms firefox thunar pipewire-pulse pipewire pipewire-jack helvum rofi dmenu mypaint spotify ttf-fira-code ttf-jetbrains-mono  adobe-source-han-sans-jp-fonts font-manager zoxide fzf bluez bluez-utils ristretto
+sudo pacman -S netctl gnome-keyring alacritty nushell starship zoxide rustup grim polkit-kde-agent dunst pamixer libpulse xdg-desktop-portal wireplumber socat nvidia-dkms swayidle slurp papirus-icon-theme socat nvidia-dkms firefox thunar pipewire-pulse pipewire pipewire-jack helvum rofi dmenu mypaint spotify ttf-fira-code ttf-jetbrains-mono  adobe-source-han-sans-jp-fonts font-manager zoxide fzf bluez bluez-utils ristretto neovim wl-clipboard
 paru -S eww-wayland swww vscodium-bin xdg-desktop-portal-hyprland-git swaylock-effects hyprland-nvidia-git spotify bibata-cursor-theme ttf-material-design-icons xwaylandvideobridge-bin wayshot-git
 
 

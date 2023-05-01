@@ -19,7 +19,7 @@ return require('packer').startup(function(use)
   vim.cmd('colorscheme catppuccin')
 
 
-  use( 'nvim-treesitter/nvim-treesitter', {run= ':TSUpdate'})
+  use('nvim-treesitter/nvim-treesitter', {run= ':TSUpdate'})
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
@@ -54,4 +54,8 @@ return require('packer').startup(function(use)
         require('Comment').setup()
     end
 }
+
+    use 'mfussenegger/nvim-dap'
+    use 'mfussenegger/nvim-dap-python'
+
   end)
