@@ -47,7 +47,7 @@ $white: $foreground;
 .eww_bar {
   @if $orientation == "v" {
     background-color: $background;
-    padding: 0.3rem;
+    padding: 0.3rem 0.5rem;
   } @else {
     background-color: $background;
     padding: 0.3rem 1rem;
@@ -128,7 +128,7 @@ $white: $foreground;
   padding: 0;
 
   @if $orientation == "v" {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     padding: 0.3rem;
   } @else {
     font-size: 1.5rem;
@@ -165,8 +165,8 @@ $white: $foreground;
   color: $magenta;
 
   @if $orientation == "v" {
-    margin-bottom: -10px;
-    font-size: 1.9em;
+    font-size: 1.7rem;
+    padding: 0.7rem 0;
   } @else {
     padding: 0 0.7rem;
     font-size: 1.7rem;
@@ -178,8 +178,8 @@ $white: $foreground;
   color: $blue;
 
   @if $orientation == "v" {
-    font-size: 1.6em;
-    padding: 0.7rem 0.2rem;
+    font-size: 1.7rem;
+    padding: 0.7rem 0;
   } @else {
     font-size: 1.7rem;
     padding: 0 0.7rem;
@@ -214,7 +214,8 @@ scale trough {
 
 // Clock
 .time {
-  font-family: JetBrains Mono Nerd Font;
+  // font-family: JetBrains Mono Nerd Font;
+  font-family: Fira Code Nerd Font;
   font-weight: bold;
   font-size: 1.2em;
   background-color: $black;
@@ -234,7 +235,8 @@ scale trough {
 // Calendar
 .cal-box {
   background-color: $black;
-  font-family: JetBrains Mono Nerd Font;
+  // font-family: JetBrains Mono Nerd Font;
+  font-family: Fira Code Nerd Font;
   font-size: 1em;
   font-weight: bold;
 
@@ -276,7 +278,7 @@ calendar:indeterminate {
 
 // Powermenu
 .powermenu {
-  font-size: 1.3em;
+  font-size: 1.7rem;
   font-weight: bold;
 
   @if $orientation == "v" {

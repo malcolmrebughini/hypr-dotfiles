@@ -46,6 +46,7 @@ return {
           "rs",
           "rust",
           "go",
+          "python",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
@@ -66,13 +67,6 @@ return {
     },
   },
   plugins = {
-    "simrat39/rust-tools.nvim", -- add lsp plugin
-    {
-      "williamboman/mason-lspconfig.nvim",
-      opts = {
-        ensure_installed = { "rust_analyzer" },
-      },
-    },
   },
 
   -- Configure require("lazy").setup() options

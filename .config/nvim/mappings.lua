@@ -12,7 +12,7 @@ return {
     ["n"] = {"<left>"},
     ["k"] = {"i"},
     ["<C-d>"] = {"<C-d>zz"},
-    ["<C-m>"] = {"<C-u>zz"},
+    ["<C-h>"] = {"<C-u>zz"},
     ["<C-n>"] = { function() require("smart-splits").move_cursor_left() end, desc = "Move to left split" },
     ["<C-e>"] = { function() require("smart-splits").move_cursor_down() end, desc = "Move to below split" },
     ["<C-u>"] = { function() require("smart-splits").move_cursor_up() end, desc = "Move to above split" },
