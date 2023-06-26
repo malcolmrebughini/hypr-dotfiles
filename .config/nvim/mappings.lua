@@ -33,15 +33,22 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     --["<leader>b"] = { name = "Buffers" },
-    -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
   i = {
-   -- ["<C-h>"] = {function () vim.lsp.buf.signature_help() end },
+    ["<S-Enter>"] = { 
+      function()
+        local copilot = require "copilot.suggestion"
+
+        if copilot.is_visible() then
+          copilot.accept()
+        end
+      end,
+      desc = "Accept copilot suggestion"
+    },
   },
   v = {
     ["u"] = {"<up>"},
