@@ -1,4 +1,4 @@
 #!/bin/sh
 
-export WALLPAPER_IMAGE="$HOME/.wallpapers/wallpaper_garlic_dog.jpg"
 export WALLPAPER_IMAGE="$HOME/.wallpapers/rain.gif"
+export WALLPAPER_IMAGE="$HOME/.wallpapers/wallpaper_garlic_dog.jpg"
