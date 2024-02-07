@@ -108,17 +108,16 @@ return {
   {
     "hrsh7th/cmp-cmdline",
     config = function()
-      cmp = require("cmp")
-      cmp.setup.cmdline('/', {
-        mapping = cmp.mapping.preset.cmdline(),
+      require("cmp").setup.cmdline('/', {
+        mapping = require("cmp").mapping.preset.cmdline(),
         sources = {
           { name = 'buffer' }
         }
       })
 
-      cmp.setup.cmdline(':', {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({
+      require("cmp").setup.cmdline(':', {
+        mapping = require("cmp").mapping.preset.cmdline(),
+        sources = require("cmp").config.sources({
           { name = 'path' }
         }, {
           {
@@ -130,6 +129,9 @@ return {
         })
       })
     end,
+    dependencies = {
+      "hrsh7th/cmp-buffer"
+    }
   },
   {
     "ThePrimeagen/harpoon",
