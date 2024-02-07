@@ -20,7 +20,7 @@ sudo pacman -S netctl gnome-keyring alacritty nushell starship zoxide rustup \
   jq poppler fd ripgrep xdg-desktop-portal-hyprland hyprland mpv
 
 paru -S eww-wayland swww yazi-git swaylock-effects bibata-cursor-theme \
-  ttf-material-design-icons xwaylandvideobridge-bin wayshot
+  ttf-material-design-icons xwaylandvideobridge-bin wayshot brillo
 
 
 # Desktop Only
