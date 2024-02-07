@@ -3,4 +3,5 @@
 .config/nushell/env.user.nu
 .uuid
 packer_compiled.lua
+waybar
 

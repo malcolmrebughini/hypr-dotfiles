@@ -6,6 +6,16 @@
 return {
   -- first key is the mode
   n = {
+    ["<leader>n"] = { desc = "File/Notifications" },
+    ["<leader>nn"] = { "<cmd>enew<cr>", desc = "New File" },
+    ["<leader>nd"] = { "<cmd>NoiceDismiss<CR>", desc = "Dismiss Notifications"},
+    ["<leader>h"] = { desc = "Harpoon" },
+    ["<leader>hh"] = { function() require('harpoon.ui').toggle_quick_menu() end, desc = "Quick Menu" },
+    ["<leader>ha"] = { function() require('harpoon.mark').add_file() end, desc = "Add file" },
+    ["<C-n>"] = { function() require("harpoon.ui").nav_file(1) end },
+    ["<C-e>"] = { function() require("harpoon.ui").nav_file(2) end },
+    ["<C-i>"] = { function() require("harpoon.ui").nav_file(3) end },
+    ["<C-o>"] = { function() require("harpoon.ui").nav_file(4) end },
     ["u"] = {"<up>"},
     ["i"] = {"<right>"},
     ["e"] = {"<down>"},
@@ -13,10 +23,10 @@ return {
     ["k"] = {"i"},
     ["<C-d>"] = {"<C-d>zz"},
     ["<C-h>"] = {"<C-u>zz"},
-    ["<C-n>"] = { function() require("smart-splits").move_cursor_left() end, desc = "Move to left split" },
-    ["<C-e>"] = { function() require("smart-splits").move_cursor_down() end, desc = "Move to below split" },
-    ["<C-u>"] = { function() require("smart-splits").move_cursor_up() end, desc = "Move to above split" },
-    ["<C-i>"] = { function() require("smart-splits").move_cursor_right() end, desc = "Move to right split" },
+    ["<S-n>"] = { function() require("smart-splits").move_cursor_left() end, desc = "Move to left split" },
+    ["<S-e>"] = { function() require("smart-splits").move_cursor_down() end, desc = "Move to below split" },
+    ["<S-u>"] = { function() require("smart-splits").move_cursor_up() end, desc = "Move to above split" },
+    ["<S-i>"] = { function() require("smart-splits").move_cursor_right() end, desc = "Move to right split" },
     ["<C-Up>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up" },
     ["<C-Down>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down" },
     ["<C-Left>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left" },
@@ -49,6 +59,11 @@ return {
       end,
       desc = "Accept copilot suggestion"
     },
+    ["<C-n>"] = { function() require("harpoon.ui").nav_file(1) end },
+    ["<C-e>"] = { function() require("harpoon.ui").nav_file(2) end },
+    ["<C-i>"] = { function() require("harpoon.ui").nav_file(3) end },
+    ["<C-o>"] = { function() require("harpoon.ui").nav_file(4) end },
+    ["<C-s>"] = { "<cmd>w!<cr>", desc = "Force write" },
   },
   v = {
     ["u"] = {"<up>"},
