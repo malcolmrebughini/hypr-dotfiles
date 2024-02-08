@@ -62,6 +62,8 @@ $env.NU_PLUGIN_DIRS = [
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/bin' | prepend '~/go/bin' | prepend '~/.cargo/bin')
 
 alias hyprstart = hyprstart.sh
+alias v = nvim .
+alias y = yazi
 
 zoxide init nushell | str replace --all "-- $rest" "-- ...$rest" | save -f ~/.zoxide.nu
 
