@@ -138,6 +138,12 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
   }
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
