@@ -123,7 +123,7 @@ style = "bg:crust sapphire"
 format = '[ $symbol ($version) ]($style)'
 
 [kubernetes]
-disabled = true
+disabled = false
 symbol = "⛵ "
 style = "bg:sapphire bold base"
 format = '[ $context \($namespace\) ]($style)'
