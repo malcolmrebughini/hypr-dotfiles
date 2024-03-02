@@ -70,5 +70,6 @@ return {
     ["i"] = {"<right>"},
     ["e"] = {"<down>"},
     ["n"] = {"<left>"},
+    ["<leader>sc"] = { ":Silicon<cr>", desc = "Snapshot code"},
   },
 }

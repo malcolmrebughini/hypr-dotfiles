@@ -144,7 +144,21 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
-  }
+  },
+  {
+    "michaelrommel/nvim-silicon",
+    lazy = true,
+	  cmd = "Silicon",
+    config = function()
+      require("silicon").setup({
+        font = "Fira Code Nerd Font=34", 
+        no_window_controls = true,
+        output = function()
+		      return "~/" .. os.date("!%Y-%m-%dT%H-%M-%S") .. "_code.png"
+	      end,
+      })
+    end,
+  },
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
   -- {
