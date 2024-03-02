@@ -1,5 +1,6 @@
 return {
   "simrat39/rust-tools.nvim", -- add lsp plugin
+  "juacker/git-link.nvim",
   {
     "ray-x/go.nvim",
     dependencies = {  -- optional packages

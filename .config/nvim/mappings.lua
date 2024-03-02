@@ -31,6 +31,8 @@ return {
     ["<C-Down>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down" },
     ["<C-Left>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left" },
     ["<C-Right>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right" },
+    ["<leader>gm"] = { function() require("git-link.main").copy_line_url() end, desc = "Copy remote link" },
+    ["<leader>go"] = { function() require("git-link.main").open_line_url() end, desc = "Open remote link" },
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
     --["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
