@@ -14,13 +14,14 @@ cd $curr
 sudo pacman -S netctl gnome-keyring alacritty nushell starship zoxide rustup \ 
   grim polkit-kde-agent dunst pamixer libpulse xdg-desktop-portal wireplumber socat \ 
   nvidia-dkms swayidle slurp papirus-icon-theme socat nvidia-dkms firefox thunar \
-  pipewire-pulse pipewire pipewire-jack helvum rofi dmenu mypaint spotify \
+  pipewire-pulse pipewire pipewire-jack helvum dmenu mypaint spotify \
   ttf-fira-code ttf-jetbrains-mono adobe-source-han-sans-jp-fonts font-manager \
   fzf bluez bluez-utils ristretto neovim wl-clipboard ffmpegthumbnailer unarchiver \
   jq poppler fd ripgrep xdg-desktop-portal-hyprland hyprland mpv silicon
 
-paru -S eww-wayland swww yazi-git swaylock-effects bibata-cursor-theme \
-  ttf-material-design-icons xwaylandvideobridge-bin wayshot brillo
+paru -S eww swww yazi-git swaylock-effects bibata-cursor-theme \
+  ttf-material-design-icons xwaylandvideobridge-bin wayshot brillo \
+  rofi-lbonn-wayland
 
 
 # Desktop Only

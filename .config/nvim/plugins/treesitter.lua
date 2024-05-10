@@ -1,7 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
-    ensure_installed = { "lua", "python", "go", "rust", "zig" },
+    ensure_installed = { "lua", "python", "go", "rust", "zig", "templ" },
     textobjects = {
       select = {
         enable = true,

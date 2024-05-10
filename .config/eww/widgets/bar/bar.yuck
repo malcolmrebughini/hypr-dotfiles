@@ -37,7 +37,7 @@
 			  :reveal volum         
 			  :duration "300ms"
 	(scale    :class "volbar" 	  
-			  :value volume_value
+			  :value {volume_value != "" ? volume_value : 0}
 			  :orientation orientation      
 			  :flipped true 
 			  :tooltip "Volume: ${volumen}%" 
@@ -121,6 +121,13 @@
 				:onclick "shutdown now"	""))))
 (defvar power false)
 
+(defwidget system []
+	(box :class "works" :orientation orientation :space-evenly true
+		(systray
+			:orientation orientation)
+	)
+)
+
 ;; Top Widgets ;;
 (defwidget top []
 	(box	:orientation orientation 
@@ -135,6 +142,7 @@
 (defwidget bottom []
 	(box	:orientation orientation 
 			:space-evenly false 
+(system)
 (time)
 (power)))
 

@@ -9,11 +9,15 @@ done
 
 
 #initial check for focused workspace
-for num in $(hyprctl monitors | grep -B 4 "focused: yes" | awk 'NR==1{print $3}'); do 
-  export f"$num"="$num"
-  export fnum=f"$num"
-  export mon=$(hyprctl monitors | grep -B 2 "\($num\)" | awk 'NR==1{print $2}')
-done
+export num=$(hyprctl activeworkspace | grep ID | awk '{print $3}')
+export f"$num"=$(hyprctl activeworkspace | grep ID | awk '{print $3}')
+export fnum=f"$num"
+export mon=$(hyprctl monitors | grep -B 4 "focused: yes" | awk 'NR==1{print $3}')
+# for num in $(hyprctl monitors | grep -B 4 "focused: yes" | awk 'NR==1{print $3}'); do 
+#   export f"$num"=$(hyprctl activeworkspace | grep ID | awk '{print $3}')
+#   export fnum=f"$num"
+#   export mon=$(hyprctl monitors | grep -B 2 "\($num\)" | awk 'NR==1{print $2}')
+# done
 
 workspaces() {
 
@@ -63,16 +67,16 @@ module() {
 #output eww widget
 echo 	"(eventbox :onscroll \"echo {} | sed -e 's/up/-1/g' -e 's/down/+1/g' | xargs hyprctl dispatch workspace\" \
           (box	:class \"works\"	:orientation \"$BAR_ORIENTATION\" :spacing 0 :space-evenly \"false\" :valign \"center\"	\
-              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 1\" :class \"ws-btn\" (label :class \"ws-icon 0$o1$f1\" :text \"${ic[1]}\"))) \
-              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 2\" :class \"ws-btn\" (label :class \"ws-icon 0$o2$f2\" :text \"${ic[2]}\"))) \
-              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 3\" :class \"ws-btn\" (label :class \"ws-icon 0$o3$f3\" :text \"${ic[3]}\"))) \
-              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 4\" :class \"ws-btn\" (label :class \"ws-icon 0$o4$f4\" :text \"${ic[4]}\"))) \
-              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 5\" :class \"ws-btn\" (label :class \"ws-icon 0$o5$f5\" :text \"${ic[5]}\"))) \
-              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 6\" :class \"ws-btn\" (label :class \"ws-icon 0$o6$f6\" :text \"${ic[6]}\"))) \
-              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 7\" :class \"ws-btn\" (label :class \"ws-icon 0$o7$f7\" :text \"${ic[7]}\"))) \
-              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 8\" :class \"ws-btn\" (label :class \"ws-icon 0$o8$f8\" :text \"${ic[8]}\"))) \
-              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 9\" :class \"ws-btn\" (label :class \"ws-icon 0$o9$f9\" :text \"${ic[9]}\"))) \
-              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 10\" :class \"ws-btn\" (label :class \"ws-icon 0$o10$f10\" :text \"${ic[10]}\"))) \
+              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 1\" :class \"ws-btn\" (label :class \"ws-icon a0$o1$f1\" :text \"${ic[1]}\"))) \
+              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 2\" :class \"ws-btn\" (label :class \"ws-icon a0$o2$f2\" :text \"${ic[2]}\"))) \
+              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 3\" :class \"ws-btn\" (label :class \"ws-icon a0$o3$f3\" :text \"${ic[3]}\"))) \
+              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 4\" :class \"ws-btn\" (label :class \"ws-icon a0$o4$f4\" :text \"${ic[4]}\"))) \
+              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 5\" :class \"ws-btn\" (label :class \"ws-icon a0$o5$f5\" :text \"${ic[5]}\"))) \
+              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 6\" :class \"ws-btn\" (label :class \"ws-icon a0$o6$f6\" :text \"${ic[6]}\"))) \
+              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 7\" :class \"ws-btn\" (label :class \"ws-icon a0$o7$f7\" :text \"${ic[7]}\"))) \
+              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 8\" :class \"ws-btn\" (label :class \"ws-icon a0$o8$f8\" :text \"${ic[8]}\"))) \
+              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 9\" :class \"ws-btn\" (label :class \"ws-icon a0$o9$f9\" :text \"${ic[9]}\"))) \
+              (eventbox :cursor \"pointer\" (button :onclick \"hyprctl dispatch workspace 10\" :class \"ws-btn\" (label :class \"ws-icon a0$o10$f10\" :text \"${ic[10]}\"))) \
           )\
         )"
 }
