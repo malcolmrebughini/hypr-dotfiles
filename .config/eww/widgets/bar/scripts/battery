@@ -3,7 +3,7 @@
 bat=/sys/class/power_supply/BAT0/
 ic=
 
-if [ ! -f "$bat" ]; then
+if [ ! -d "$bat" ]; then
     exit
 fi
 

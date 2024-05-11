@@ -11,4 +11,6 @@ return {
   { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.color.transparent-nvim" },
+  { import = "astrocommunity.completion.cmp-cmdline" },
+  { import = "astrocommunity.utility.noice-nvim" },
 }

@@ -136,6 +136,33 @@ return {
         ["<C-Right>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right" },
         ["<leader>gm"] = { copy_line_url, desc = "Copy remote link" },
         ["<leader>go"] = { open_line_url, desc = "Open remote link" },
+        -- Copilot
+        ["<leader>c"] = { desc = "Copilot" },
+        ["<leader>cc"] = { desc = "Chat" },
+        ["<leader>ccq"] = {
+          function()
+            local input = vim.fn.input("Quick Chat: ")
+            if input ~= "" then
+              require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+            end
+          end,
+          desc = "CopilotChat - Quick chat",
+        },
+        ["<leader>cch"] = {
+          function()
+            local actions = require("CopilotChat.actions")
+            require("CopilotChat.integrations.telescope").pick(actions.help_actions())
+          end,
+          desc = "CopilotChat - Help actions",
+        },
+        -- Show prompts actions with telescope
+        ["<leader>ccp"] = {
+          function()
+            local actions = require("CopilotChat.actions")
+            require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+          end,
+          desc = "CopilotChat - Prompt actions",
+        },
         -- second key is the lefthand side of the map
         -- mappings seen under group name "Buffer"
         --["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
@@ -174,6 +201,21 @@ return {
         ["e"] = { "<down>" },
         ["n"] = { "<left>" },
         ["<leader>sc"] = { ":Silicon<cr>", desc = "Snapshot code" },
+        ["<leader>cch"] = {
+          function()
+            local actions = require("CopilotChat.actions")
+            require("CopilotChat.integrations.telescope").pick(actions.help_actions())
+          end,
+          desc = "CopilotChat - Help actions",
+        },
+        -- Show prompts actions with telescope
+        ["<leader>ccp"] = {
+          function()
+            local actions = require("CopilotChat.actions")
+            require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+          end,
+          desc = "CopilotChat - Prompt actions",
+        },
       },
     },
   },

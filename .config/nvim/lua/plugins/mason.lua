@@ -22,7 +22,8 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "golangci_lint", "ruff", "zigfmt", "ruff-lsp",
+        "golangci_lint", "ruff", "zigfmt", 
+        --"ruff-lsp",
         "prettier",
         "stylua",
         -- add more arguments for adding more null-ls sources
