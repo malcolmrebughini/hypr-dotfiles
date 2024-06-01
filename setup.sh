@@ -17,11 +17,10 @@ sudo pacman -S netctl gnome-keyring alacritty nushell starship zoxide rustup \
   pipewire-pulse pipewire pipewire-jack helvum dmenu mypaint spotify \
   ttf-fira-code ttf-jetbrains-mono adobe-source-han-sans-jp-fonts font-manager \
   fzf bluez bluez-utils ristretto neovim wl-clipboard ffmpegthumbnailer unarchiver \
-  jq poppler fd ripgrep xdg-desktop-portal-hyprland hyprland mpv silicon
+  jq poppler fd ripgrep xdg-desktop-portal-hyprland hyprland mpv silicon rofi-wayland
 
 paru -S eww swww yazi-git swaylock-effects bibata-cursor-theme \
-  ttf-material-design-icons xwaylandvideobridge-bin wayshot brillo \
-  rofi-lbonn-wayland
+  ttf-material-design-icons xwaylandvideobridge-bin wayshot brillo
 
 
 # Desktop Only

@@ -180,4 +180,24 @@ return {
       -- See Commands section for default commands if you want to lazy load on them
     },
   },
+  {
+    "tigion/nvim-asciidoc-preview",
+    cmd = { "AsciiDocPreview" },
+    ft = { "asciidoc" },
+    build = "cd server && npm install",
+    opts = {
+      -- Add user configuration here
+    },
+  },
+  {
+    "hedyhli/outline.nvim",
+    config = function()
+      -- Example mapping to toggle outline
+      vim.keymap.set("n", "<leader>O", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+
+      require("outline").setup {
+        -- Your setup opts here (leave empty to use defaults)
+      }
+    end,
+  },
 }
