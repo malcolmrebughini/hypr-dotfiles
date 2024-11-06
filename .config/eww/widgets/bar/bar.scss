@@ -143,8 +143,8 @@ $white: $foreground;
 
 .ws-btn:hover {
   .ws-icon {
-      color: $cyan;
-      transition: 0.3s all ease;
+    color: $cyan;
+    transition: 0.3s all ease;
   }
 }
 
@@ -161,7 +161,7 @@ $white: $foreground;
   color: $blue;
 }
 
-.wifi-icon { 
+.wifi-icon {
   color: $magenta;
 
   @if $orientation == "v" {
@@ -190,7 +190,7 @@ scale trough {
   all: unset;
   background-color: $background;
   border-radius: 5px;
-  
+
   @if $orientation == "v" {
     min-height: 80px;
     min-width: 10px;
@@ -199,7 +199,7 @@ scale trough {
     min-width: 80px;
     min-height: 10px;
     margin: 0 0.3rem 0 0.3rem;
-  } 
+  }
 }
 
 .bribar trough highlight {
@@ -221,14 +221,14 @@ scale trough {
   background-color: $black;
   color: $white;
   border-radius: 5px;
-  
+
   @if $orientation == "v" {
     padding: 0.7rem 0 0.5rem 0;
     margin: 0.5rem 0 0.5rem 0;
   } @else {
     font-size: 1.4rem;
     padding: 0 0.7rem;
-    margin:  0 0.5rem;
+    margin: 0 0.5rem;
   }
 }
 
@@ -236,7 +236,8 @@ scale trough {
 .cal-box {
   background-color: $black;
   // font-family: JetBrains Mono Nerd Font;
-  font-family: Fira Code Nerd Font;
+  // font-family: Fira Code Nerd Font;
+  font-family: CaskaydiaMono Nerd Font;
   font-size: 1em;
   font-weight: bold;
 

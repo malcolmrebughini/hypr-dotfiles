@@ -10,7 +10,8 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.pack.python-ruff" },
-  { import = "astrocommunity.color.transparent-nvim" },
-  { import = "astrocommunity.completion.cmp-cmdline" },
+  -- { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.completion.cmp-cmdline" },
+  { import = "astrocommunity.pack.go" },
 }

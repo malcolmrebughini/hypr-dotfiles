@@ -9,8 +9,14 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "rust_analyzer", "gopls", "pyright", "zls", "templ", "tailwindcss",
+        "rust_analyzer",
+        -- "gopls",
+        "pyright",
+        "zls",
+        "templ",
+        "tailwindcss",
         "lua_ls",
+        "htmx",
         -- add more arguments for adding more language servers
       })
     end,
@@ -22,7 +28,9 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "golangci_lint", "ruff", "zigfmt", 
+        -- "golangci_lint",
+        "ruff",
+        "zigfmt",
         --"ruff-lsp",
         "prettier",
         "stylua",
@@ -36,7 +44,8 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "python", "delve",
+        "python",
+        -- "delve",
         -- add more arguments for adding more debuggers
       })
     end,

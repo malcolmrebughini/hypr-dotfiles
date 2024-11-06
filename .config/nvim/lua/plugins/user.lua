@@ -15,11 +15,11 @@ return {
   --   end,
   -- },
   "andweeb/presence.nvim",
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
-  },
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "BufRead",
+  --   config = function() require("lsp_signature").setup() end,
+  -- },
 
   -- == Examples of Overriding Plugins ==
 
@@ -166,29 +166,29 @@ return {
 
       -- see below for full list of options 👇
     },
-    {
-      "CopilotC-Nvim/CopilotChat.nvim",
-      branch = "canary",
-      dependencies = {
-        { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-        { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-      },
-      opts = {
-        debug = true, -- Enable debugging
-        -- See Configuration section for rest
-      },
-      -- See Commands section for default commands if you want to lazy load on them
-    },
   },
-  {
-    "tigion/nvim-asciidoc-preview",
-    cmd = { "AsciiDocPreview" },
-    ft = { "asciidoc" },
-    build = "cd server && npm install",
-    opts = {
-      -- Add user configuration here
-    },
-  },
+  -- {
+  --   "CopilotC-Nvim/CopilotChat.nvim",
+  --   branch = "canary",
+  --   dependencies = {
+  --     { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+  --     { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+  --   },
+  --   opts = {
+  --     debug = true, -- Enable debugging
+  --     -- See Configuration section for rest
+  --   },
+  --   -- See Commands section for default commands if you want to lazy load on them
+  -- },
+  -- {
+  --   "tigion/nvim-asciidoc-preview",
+  --   cmd = { "AsciiDocPreview" },
+  --   ft = { "asciidoc" },
+  --   build = "cd server && npm install",
+  --   opts = {
+  --     -- Add user configuration here
+  --   },
+  -- },
   {
     "hedyhli/outline.nvim",
     config = function()
@@ -199,5 +199,31 @@ return {
         -- Your setup opts here (leave empty to use defaults)
       }
     end,
+  },
+  {
+    "leoluz/nvim-dap-go",
+    ft = "go",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      {
+        "jay-babu/mason-nvim-dap.nvim",
+        optional = true,
+        opts = function(_, opts)
+          opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "delve" })
+        end,
+      },
+    },
+    opts = {
+      dap_configurations = {
+        {
+          type = "go",
+          name = "Attach remote",
+          mode = "remote",
+          request = "attach",
+          port = 2345,
+          host = "127.0.0.1",
+        },
+      },
+    },
   },
 }
